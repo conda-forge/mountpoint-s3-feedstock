@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 context:
   name: mountpoint-s3
-  version: "1.21.0"
+  version: "1.24.0"
 
 package:
   name: ${{ name|lower }}
@@ -31,6 +31,8 @@ build:
 requirements:
   build:
     - ${{ compiler('rust') }} >=1.85
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
     - cargo-bundle-licenses
     - cmake
